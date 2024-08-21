@@ -200,16 +200,16 @@ const Chatbot = () => {
               placeholder="Type a message..."
               disabled={isTyping} // Disable input if bot is typing
             />
-            <input
+            {/* <input
               type="file"
               id="imageUpload"
               style={{ display: 'none' }}
               accept="image/*"
               onChange={handleImageUpload}
-            />
-            <label htmlFor="imageUpload" className="image-upload-icon">
+            /> */}
+            {/* <label htmlFor="imageUpload" className="image-upload-icon">
               <img src={uploadLogo} alt="Upload" />
-            </label>
+            </label> */}
             <button className="send-button" onClick={handleSendMessage} disabled={isTyping}>
               <img src={sendLogo} alt="Send" />
             </button>
