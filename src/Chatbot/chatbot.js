@@ -7,7 +7,7 @@ import uploadLogo from '../assets/file.jpeg';
 import '../Chatbot/chatbot.css';
 
 const Chatbot = () => {
-  const [isChatboxVisible, setIsChatboxVisible] = useState(true);
+  const [isChatboxVisible, setIsChatboxVisible] = useState(false);
   const [messages, setMessages] = useState([
     { text: 'Hello! How can I assist you today?', sender: '' },
   ]);
@@ -15,9 +15,9 @@ const Chatbot = () => {
   const [currentTypingMessage, setCurrentTypingMessage] = useState(''); // For the typing effect of the current message
   const [isTyping, setIsTyping] = useState(false);
 
-  // const toggleChatbox = () => {
-  //   setIsChatboxVisible(!isChatboxVisible);
-  // };
+  const toggleChatboxes = () => {
+    setIsChatboxVisible(!isChatboxVisible);
+  };
 
   const [showConfirmation, setShowConfirmation] = useState(false); // State for confirmation popup
 
@@ -28,17 +28,6 @@ const Chatbot = () => {
       setIsChatboxVisible(true); // If chatbox is not visible, show it
     }
   };
-
-  // const toggleChatbox = () => {
-  //   setIsChatboxVisible(!isChatboxVisible);
-  //   if (isChatboxVisible) {
-  //     // Clear the chatbox when closing it
-  //     setMessages([{ text: 'Hello! How can I assist you today?', sender: '' }]);
-  //     setCurrentTypingMessage('');
-  //     setIsTyping(false);
-  //     setNewMessage('');
-  //   }
-  // };
 
   const confirmDelete = () => {
     //setMessages([]); // Clear the chat history
@@ -145,7 +134,7 @@ const Chatbot = () => {
   return (
     <div className="chatbot-container">
       {/* Message Photo */}
-      <div className="message-photo" onClick={toggleChatbox}>
+      <div className="message-photo" onClick={toggleChatboxes}>
         <img src={messageLogo} alt="Message" />
       </div>
 
